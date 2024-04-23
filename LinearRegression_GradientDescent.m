@@ -5,8 +5,8 @@ rng(1);
 %defining constant values, you can change this values
 order=15; %the order of polynomial
 data_size=10;%number of data points
-step_size = 0.5;%step size of gradient desccent algorithm
-itration_num = 10000;%number of times that gradient descent runs
+step_size = 0.05;%step size of gradient desccent algorithm
+itration_num = 100000;%number of times that gradient descent runs
 %creat and visualize dataset
 x = linspace(0,1,data_size);
 z = linspace(0,1,100);
