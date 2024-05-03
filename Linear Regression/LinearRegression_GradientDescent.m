@@ -3,7 +3,7 @@ clear all
 clc
 rng(1);
 %defining constant values, you can change this values
-order=15; %the order of polynomial
+order=13; %the order of polynomial
 data_size=10;%number of data points
 step_size = 0.05;%step size of gradient desccent algorithm
 itration_num = 100000;%number of times that gradient descent runs
@@ -23,12 +23,8 @@ end
 X = [ones(data_size,1) , X];
 %gradient descent algorithm
 teta = [1;zeros(order,1)];
-teta0 = [1;zeros(order,1)];
 for j=1:itration_num
-    for i=1:order+1
-        teta0(i) = teta(i) + step_size*sum((y - X*teta).*X(:,i));
-    end
-    teta = teta0;
+    teta = teta + step_size*(X'*((y - X*teta)));
 end
 f=zeros(100,order);
 for i=1:order
